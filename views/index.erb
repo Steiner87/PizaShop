@@ -10,7 +10,7 @@
             <img src="<%=p.path_to_img%>" alt="">
             <p>Размер: <%=p.size%> см</p>
             <p>Цена: <%=p.price%> грн</p>
-            <button class="btn btn-sm btn-success" onclick="add_to_card()">Добавить в корзину</button>
+            <button class="btn btn-sm btn-success" onclick="add_to_cart(<%= p.id %>)">Добавить в корзину</button>
         </div>
         <% end %>
     </div>
