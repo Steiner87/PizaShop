@@ -15,3 +15,7 @@ get '/' do
 	@products=Product.all
 	erb :index
 end
+
+post '/cart' do
+	erb "Hello!"
+end
