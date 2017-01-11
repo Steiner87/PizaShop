@@ -3,6 +3,8 @@ function add_to_cart(id) {
     var x = window.localStorage.getItem(key); //Первый раз x=NULL 
     x = x * 1 + 1; //NULL*1=0 
     window.localStorage.setItem(key, x);
+
+    update_orders_input();
     alert('In your cart:' + cart_get_number_of_items(key));
 }
 
@@ -21,6 +23,11 @@ function cart_get_number_of_items() {
 
     }
     return cnt;
+}
+
+function update_orders_input() {
+    var orders = cart_get_orders();
+    $('#orders_input').val(orders)
 }
 
 function cart_get_orders() {
