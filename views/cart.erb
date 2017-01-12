@@ -1,4 +1,4 @@
-<p>Ваша корзина.
+<h2>Ваша корзина</h2>
 
 <table class="table table-striped">
   <thead>
@@ -21,10 +21,10 @@
     <tr>
       <th scope="row"><%=item[0].id%></th>
       <td scope="row"><%=item[0].title%></td>
-      <td><%=item[0].size.to_i%></td>
-      <td><%=item[0].price.to_i%></td>
+      <td><%=item[0].size.to_i%> см</td>
+      <td><%=item[0].price.to_i%> грн</td>
       <td><%=item[1]%></td>
-      <td><%=item[0].price.to_i * item[1].to_i %></td>
+      <td><%=item[0].price.to_i * item[1].to_i %> грн</td>
 
 
 
@@ -33,13 +33,14 @@
   <% end %>
   <% @items.each do |item| %>
         <% total_prise=total_prise + item[0].price.to_i * item[1].to_i%>
+        <% total_quantity=total_quantity + item[1].to_i %>
     <% end %>
       <tr>
         <th scope="row">Итого:</th>
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
+        <td><%=total_quantity%></td>
        
         <th><%=total_prise%> грн</th>
     </tr>
@@ -49,4 +50,10 @@
 
   </tbody>
 </table>
+<div class="row">
+    <div class="col-md-12">
         <button type="button" class="btn btn-md btn-success pull-right" >Оформить заказ</button>
+        <button type="button" class="btn btn-md btn-danger pull-right" >Очистить корзину</button>
+    </div>
+</div>
+        
